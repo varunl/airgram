@@ -1,5 +1,6 @@
 import urllib, urllib2
 
+# A wrapper around the Airgram API, http://www.airgramapp.com/.
 # author: varun
 
 class Airgram(object):
@@ -8,6 +9,16 @@ class Airgram(object):
   BASE_URL = "https://api.airgramapp.com/1"
 
   def send_as_guest(self, email, msg, url=None):
+    """Send a push notification as a guest. No need to register your service.
+
+    Args:
+      email: The email to which you want to send the notification.
+      msg: The notification msg.
+      url: If the notification should direct you to a url.
+
+    Returns:
+      The response content.
+    """
     params = {
         "email": email,
         "msg": msg,
