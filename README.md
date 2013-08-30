@@ -1,4 +1,4 @@
-airgram
+py-airgram
 =======
 
 A python wrapper for the Airgram API.
