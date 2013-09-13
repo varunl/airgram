@@ -31,7 +31,7 @@ class Airgram(object):
 		"email": email,
 		"msg": msg,
 		}
-		if (url):
+		if url:
 			params["url"] = url
 		return self._post("/send", params, True)
 
@@ -48,7 +48,7 @@ class Airgram(object):
 		self.check_auth()
 
 		params = {"msg": msg}
-		if (url):
+		if url:
 			params["url"] = url
 		return self._post("/broadcast", params, True)
 
@@ -67,7 +67,7 @@ class Airgram(object):
 				"email": email,
 				"msg": msg,
 		}
-		if (url):
+		if url:
 			params["url"] = url
 		return self._post("/send_as_guest", params)
 
@@ -76,7 +76,7 @@ class Airgram(object):
 		params = urlencode(decoded_params)
 		req = urllib2.Request(url, params)
 		
-		if (auth):
+		if auth:
 			base64string = encodestring('%s:%s' % (self.KEY, self.SECRET)).replace('\n', '')
 			req.add_header("Authorization", "Basic %s" % base64string)  
 		
